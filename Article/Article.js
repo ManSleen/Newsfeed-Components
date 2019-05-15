@@ -31,3 +31,5 @@ let articles = Array.from(document.getElementsByClassName("article"));
 articles.forEach(article => {
   return new Article(article);
 });
+
+const article1 = document.querySelector(".article");

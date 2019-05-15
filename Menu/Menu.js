@@ -8,7 +8,7 @@ console.log(body);
 // Using your menuButton reference, add a click handler that calls toggleMenu
 
 let tween = TweenMax.from(menu, 0.2, {
-  left: -250,
+  left: -300,
   reversed: true,
   paused: true
 });
@@ -19,13 +19,6 @@ const toggleMenu = event => {
   tween.reversed() ? tween.play() : tween.reverse();
 };
 
-// function closeMenu() {
-//   if (event.target != menu) {
-//     tween.reverse();
-//     console.log("You clicked outside menu!");
-//   }
-// }
-
 menuButton.addEventListener("click", () => toggleMenu());
 
 window.addEventListener("mouseup", function(event) {
@@ -33,9 +26,9 @@ window.addEventListener("mouseup", function(event) {
     event.target != menu &&
     event.target.parentNode != menu &&
     event.target.parentNode.parentNode != menu &&
+    event.target.parentNode.parentNode.parentNode != menu &&
     event.target != menuButton
   ) {
     tween.reverse();
-    console.log("You clicked outside menu!");
   }
 });
